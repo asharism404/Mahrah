@@ -21,3 +21,10 @@ ADD A PRODUCT
 IMPORTANT
   Change STORE.whatsapp, STORE.instagram and STORE.email in data/products.js.
   Prices and stock numbers are sample values. Replace them with your real ones.
+
+NEW IN THIS VERSION
+  data/content.js    EDIT THIS: top announcement bar, how-to-order steps, size chart,
+                     delivery and exchange text, and FAQs.
+  js/extras.js       builds those sections (no need to edit).
+  The measurements, delivery times and policies in content.js are SAMPLE text.
+  Replace them with your real information before launch.

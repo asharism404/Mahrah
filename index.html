@@ -13,9 +13,9 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header id="hd"><div class="wrap nav">
+<header id="hd"><div class="announce" id="announce"></div><div class="wrap nav">
 <div class="navl"><button type="button" class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
-<ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#sizes">Size guide</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
 <a href="#top" class="logo" aria-label="House of Al Mahrah"><img src="images/logo.jpg" alt="" width="60" height="60"><span class="lt"><b>HOUSE OF AL MAHRAH</b><span class="ar">بيت المهرة</span></span></a>
 <a class="bag" data-wa target="_blank" rel="noopener">WhatsApp</a>
 </div></header>
@@ -25,7 +25,7 @@
 <p class="dl">Shop by category</p>
 <ul id="catMenu"></ul>
 <p class="dl">House</p>
-<ul class="dm"><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul class="dm"><li><a href="#about">About</a></li><li><a href="#sizes">Size guide</a></li><li><a href="#delivery">Delivery</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
 </aside>
 
 <main id="top">
@@ -56,6 +56,27 @@
 <p class="empty" id="empty" hidden>No pieces in this category yet.</p>
 </div></section>
 
+<section class="how" id="how"><div class="wrap">
+<div class="head rv"><h2>How to order</h2><p>Simple, personal and done on WhatsApp.</p></div>
+<div class="steps" id="steps"></div>
+</div></section>
+
+<section class="sizes" id="sizes"><div class="wrap">
+<div class="head rv"><h2>Size guide</h2><p>Find your fit before you order.</p></div>
+<div class="tbl rv" id="sizeTable"></div>
+<p class="tip" id="sizeTip"></p>
+</div></section>
+
+<section class="band" id="delivery"><div class="wrap">
+<div class="head rv"><h2>Delivery and exchange</h2><p>What to expect after you order.</p></div>
+<div class="dgrid" id="dgrid"></div>
+</div></section>
+
+<section class="faqs" id="faq"><div class="wrap">
+<div class="head rv"><h2>Questions</h2><p>Quick answers before you message us.</p></div>
+<div class="faq rv" id="faqList"></div>
+</div></section>
+
 <section class="contact" id="contact"><div class="wrap rv">
 <h2>Contact</h2>
 <p style="max-width:460px;margin:0 auto">Questions about sizing, fabric or delivery? Message us and we will reply as soon as we can.</p>
@@ -66,12 +87,14 @@
 
 <footer><div class="wrap">
 <img class="flogo" src="images/logo.jpg" alt="House of Almahra" width="96" height="96"><b class="fname">HOUSE OF AL MAHRAH</b><div class="ar">بيت المهرة</div>
-<ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#sizes">Size guide</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
 <small>© 2026 House of Al Mahrah</small>
 </div></footer>
 <div class="toast" id="toast" role="status"></div>
 
 <script src="data/products.js"></script>
+<script src="data/content.js"></script>
 <script src="js/main.js"></script>
+<script src="js/extras.js"></script>
 </body>
 </html>
