@@ -1,30 +1,16 @@
 HOUSE OF AL MAHRAH WEBSITE
 ==========================
-Open index.html in a browser to preview. Upload the whole folder to any web host
-(Netlify, GitHub Pages, Hostinger, etc.).
+Preview:  open index.html in a browser.
+Manage:   open admin.html (Shop Manager) to update stock, prices, photos and
+          products, then download products.js and replace data/products.js.
+Guide:    read HOW-TO-ADD-PRODUCTS.txt (plain steps, no coding).
+Upload:   put the whole folder on any web host (Netlify, GitHub Pages, Hostinger...).
 
 FOLDERS
-  index.html          page content (text, sections)
-  css/style.css       colours (see :root at the top), fonts, layout
-  js/main.js          behaviour (you rarely need to touch this)
-  data/products.js    EDIT THIS: WhatsApp number, prices, stock, colours, products
-  images/             product photos
-
-UPDATE STOCK
-  Open data/products.js and change the numbers in "sizes".
-  0 greys out that size. All sizes at 0 shows "Sold out" automatically.
-
-ADD A PRODUCT
-  1. Put the photo in images/ (portrait 3:4 works best, under 150 KB).
-  2. Copy one product block in data/products.js, paste it, and change the details.
-
-IMPORTANT
-  Change STORE.whatsapp, STORE.instagram and STORE.email in data/products.js.
-  Prices and stock numbers are sample values. Replace them with your real ones.
-
-NEW IN THIS VERSION
-  data/content.js    EDIT THIS: top announcement bar, how-to-order steps, size chart,
-                     delivery and exchange text, and FAQs.
-  js/extras.js       builds those sections (no need to edit).
-  The measurements, delivery times and policies in content.js are SAMPLE text.
-  Replace them with your real information before launch.
+  index.html        website page
+  admin.html        Shop Manager (for you, not for customers)
+  data/products.js  products, stock, prices, store settings (made by Shop Manager)
+  data/content.js   announcement, experience points, size chart, delivery, FAQs
+  css/style.css     colours and layout
+  js/               website behaviour (no need to edit)
+  images/           product photos

@@ -1,0 +1,141 @@
+=====================================================================
+ HOUSE OF AL MAHRAH: HOW TO MANAGE YOUR WEBSITE
+=====================================================================
+
+THE EASY WAY: THE SHOP MANAGER (admin.html)
+---------------------------------------------------------------------
+You do NOT need to edit any code. Open the file  admin.html  (double-click
+it, it opens in your browser). Everything below is done with buttons and
+boxes.
+
+THE 3-STEP ROUTINE (every time you change something)
+  1. Make your changes in the Shop Manager.
+  2. Click  "Download products.js"  (top right).
+  3. Replace the file  data/products.js  in your website folder with the
+     downloaded file, then upload it to your host. Refresh your site with
+     Ctrl+F5 (Cmd+Shift+R on Mac).
+Tip: keep a copy of your old products.js as a backup.
+
+The Shop Manager saves your work as a draft in your browser while you edit.
+Your live website only changes after step 3.
+
+---------------------------------------------------------------------
+ UPDATE STOCK (daily use)  ->  "Quick stock" tab
+---------------------------------------------------------------------
+  - Every product shows its colours and sizes in one table.
+  - Type how many pieces you have in each box. Red box = 0 = sold out.
+  - "Sold out" button on a colour row sets that whole colour to 0.
+  - Then do the 3-step routine.
+
+MARK A PRODUCT OUT OF STOCK
+  Click  "Mark out of stock"  on the product card. The website shows
+  "Sold out", disables ordering, and shows a link "Ask when it is back on
+  WhatsApp" so interested customers can message you.
+  Click  "Mark back in stock"  to undo it.
+  (A product also shows "Sold out" automatically when every size is 0.)
+
+REMOVE A PRODUCT
+  Temporarily: Products tab -> "Hide". It disappears from the website but
+               keeps all its details. Click "Show on website" to bring it back.
+  For good:    Products tab -> "Edit" -> "Delete product".
+
+---------------------------------------------------------------------
+ ADD A NEW PRODUCT  ->  "Products" tab
+---------------------------------------------------------------------
+  1. Copy the product photos into the  images  folder (portrait photos,
+     about 900 x 1440 pixels, under 200 KB each, no spaces in file names).
+  2. Click "+ Add product" and type the name.
+  3. Fill in the form:
+       Basics ........ name, Arabic name, category, badge (New / Bestseller)
+       Price ......... original price, then choose a discount (see below)
+       Photos ........ click "+ Add photos" and pick the same photo files.
+                       The first photo is the cover. Use the up arrow to
+                       change the order.
+       Colours ....... "+ Add colour". Name, swatch colour, and the photo
+                       for that colour (tapping the colour shows that photo).
+       Stock ......... type pieces per size for each colour.
+       Details ....... short description, fabric, GSM, fit, what is included,
+                       care, full description, highlights (see below).
+  4. Do the 3-step routine.
+  Different COLOURS of one article = one product with several colours.
+  Different ANGLES (front, back, close-up) = several photos of one product.
+
+---------------------------------------------------------------------
+ PRICES AND DISCOUNTS
+---------------------------------------------------------------------
+"Original price" is always the full (MRP) price. Under  Discount  choose:
+  - No discount
+  - Percent off  (for example 20)  -> the sale price is worked out for you
+  - Exact sale price                -> the % off is worked out for you
+The box under it shows what customers will pay. On the website customers see
+the sale price, the crossed-out original price, a "% OFF" tag and "You save".
+
+Site-wide sale (Eid / festival):  "Store and categories" tab ->
+"Site-wide sale". For example 15 puts everything on 15% off. Set back to 0
+when it ends. A product's own discount always wins over the site-wide one.
+Remember to change the announcement bar text in data/content.js.
+
+---------------------------------------------------------------------
+ PRODUCT DETAILS (shown on each product page)
+---------------------------------------------------------------------
+  Short description .... one line, shown on the shop grid
+  Full description ..... one paragraph per line
+  Highlights ........... one bullet per line
+  Fabric ............... for example "Soft crepe with satin trim"
+  Fabric weight (GSM) .. number, usually 200 to 300
+                         about 150-200 light, 200-250 medium, 250-300 structured
+                         The site adds the label and an explanation.
+  Fit .................. "Relaxed, true to size. Size down for a closer fit."
+  What is included ..... "Tunic and trousers"
+  Care ................. "Dry clean recommended."
+Every product page also shows "The House of Al Mahrah experience" (checked by
+hand, packaging, fit help, exchange). Edit those four points in
+data/content.js under  experience.
+
+---------------------------------------------------------------------
+ STORE SETTINGS  ->  "Store and categories" tab
+---------------------------------------------------------------------
+  WhatsApp number (country code + number, no + or spaces), Instagram link,
+  email, currency symbol, site-wide sale, and the "few left" level.
+  Categories: add or rename the categories shown in the menu and filters.
+
+---------------------------------------------------------------------
+ OTHER TEXT ON THE WEBSITE
+---------------------------------------------------------------------
+  data/content.js  announcement bar, experience points, how-to-order steps,
+                   size chart, delivery and exchange text, FAQs
+  index.html       main headings and About text
+  css/style.css    colours (list at the top of the file)
+Measurements, delivery times, policies and the experience text supplied
+with the site are SAMPLES. Replace them with your real information.
+
+---------------------------------------------------------------------
+ SHOPPING BAG
+---------------------------------------------------------------------
+Customers add items to a bag and send ONE WhatsApp message with every item,
+colour, size, quantity, prices and total. Quantity follows your stock
+(maximum 5 per item). Nothing to set up. "Buy now on WhatsApp" orders a
+single item.
+
+---------------------------------------------------------------------
+ IF SOMETHING GOES WRONG
+---------------------------------------------------------------------
+  - Changes do not show: refresh with Ctrl+F5, and check you replaced
+    data/products.js in the right folder.
+  - A photo shows broken: the photo file is not in the images folder, or the
+    name is different (capital letters, .jpg vs .jpeg).
+  - Shop Manager shows old data: click "Discard changes" to reload from the
+    current data/products.js.
+  - Keep admin.html on your own computer if you prefer. It cannot change
+    your website by itself; only the file you upload does.
+
+---------------------------------------------------------------------
+ ADVANCED: EDITING data/products.js BY HAND
+---------------------------------------------------------------------
+Not needed if you use the Shop Manager. Fields per product:
+  id, category, name, arabic, description, price, discount OR salePrice,
+  badge, images [ ], crop, madeToOrder, outOfStock, hidden, longDescription [ ],
+  highlights [ ], fabric, gsm, fit, includes, care,
+  colours [ { name, hex, image, sizes: { S: 3, M: 0 } } ]
+Mind the commas and quotes. If the site goes blank after a hand edit, there
+is a typo: restore your backup copy.

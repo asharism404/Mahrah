@@ -1,10 +1,17 @@
 /* ==========================================================
    WEBSITE CONTENT: edit the text below. No other file needed.
    NOTE: measurements, delivery times and policies below are
-   SAMPLE text. Replace them with your real information.
+   SAMPLE text (including the House of Al Mahrah experience below). Replace them with your real information.
    ========================================================== */
 const CONTENT = {
   announcement: "Free delivery on orders above ₹5,000  ·  Order easily on WhatsApp",
+
+  experience: [
+    { title: "Checked by hand", text: "Every piece is inspected for stitching, fabric and finish before it is packed." },
+    { title: "Signature packaging", text: "Your order arrives folded in tissue and our House of Al Mahrah packaging, ready to gift." },
+    { title: "Personal fit help", text: "Message us on WhatsApp for sizing advice and styling ideas before you decide." },
+    { title: "Easy exchange", text: "If the size is not right, tell us within 3 days of delivery and we will arrange an exchange." }
+  ],
 
   steps: [
     { title: "Choose", text: "Pick a piece, a colour and your size." },

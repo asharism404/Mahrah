@@ -17,7 +17,7 @@
 <div class="navl"><button type="button" class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
 <ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#sizes">Size guide</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
 <a href="#top" class="logo" aria-label="House of Al Mahrah"><img src="images/logo.jpg" alt="" width="60" height="60"><span class="lt"><b>HOUSE OF AL MAHRAH</b><span class="ar">بيت المهرة</span></span></a>
-<a class="bag" data-wa target="_blank" rel="noopener">WhatsApp</a>
+<div class="navr"><a class="bag" data-wa target="_blank" rel="noopener">WhatsApp</a><button type="button" class="cartbtn" data-cart aria-label="Open bag"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><i class="cc">0</i></button></div>
 </div></header>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
@@ -49,6 +49,11 @@
 <p>Our range runs from satin abayas and embroidered kaftans to lace tunics and activewear. Every piece has full coverage and a relaxed fit.</p>
 </div></div></section>
 
+<section class="exp" id="experience"><div class="wrap">
+<div class="head rv"><h2>The House of Al Mahrah experience</h2><p>From the first message to the moment you unwrap your order.</p></div>
+<div class="expgrid" id="expGrid"></div>
+</div></section>
+
 <section class="shop" id="collection"><div class="wrap">
 <div class="head rv"><h2>Collection</h2><p>Pick a colour and size, then send your order on WhatsApp.</p></div>
 <div class="chips" id="chips"></div>
@@ -61,7 +66,7 @@
 <div class="steps" id="steps"></div>
 </div></section>
 
-<section class="sizes" id="sizes"><div class="wrap">
+<section class="sizeguide" id="sizes"><div class="wrap">
 <div class="head rv"><h2>Size guide</h2><p>Find your fit before you order.</p></div>
 <div class="tbl rv" id="sizeTable"></div>
 <p class="tip" id="sizeTip"></p>
@@ -91,10 +96,13 @@
 <small>© 2026 House of Al Mahrah</small>
 </div></footer>
 <div class="toast" id="toast" role="status"></div>
+<div class="pdp" id="pdp" tabindex="-1" aria-hidden="true"></div>
 
 <script src="data/products.js"></script>
 <script src="data/content.js"></script>
 <script src="js/main.js"></script>
 <script src="js/extras.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/product.js"></script>
 </body>
 </html>
