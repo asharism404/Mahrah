@@ -43,7 +43,48 @@
     return el;
   }
 
-  PRODUCTS.filter(function (p) { return !p.hidden; }).forEach(function (p, i) { grid.appendChild(card(p, i)); });
+  /* categories: filter + hamburger menu */
+  var visible = PRODUCTS.filter(function (p) { return !p.hidden; });
+  var cats = CATEGORIES.filter(function (c) { return visible.some(function (p) { return p.category === c.id; }); });
+  var current = "all", chipsEl = document.getElementById("chips"), menuEl = document.getElementById("catMenu"), emptyEl = document.getElementById("empty");
+  var countOf = function (id) { return id === "all" ? visible.length : visible.filter(function (p) { return p.category === id; }).length; };
+
+  function render() {
+    grid.innerHTML = "";
+    var list = visible.filter(function (p) { return current === "all" || p.category === current; });
+    list.forEach(function (p, i) { var el = card(p, i); grid.appendChild(el); requestAnimationFrame(function () { el.classList.add("on"); }); });
+    emptyEl.hidden = list.length > 0;
+    chipsEl.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.cat === current)); });
+    menuEl.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-current", String(b.dataset.cat === current)); });
+  }
+
+  var all = [{ id: "all", name: "All pieces", arabic: "" }].concat(cats);
+  chipsEl.innerHTML = all.map(function (c) { return '<button type="button" data-cat="' + c.id + '" aria-pressed="false">' + c.name + "</button>"; }).join("");
+  menuEl.innerHTML = all.map(function (c) {
+    return '<li><button type="button" data-cat="' + c.id + '" aria-current="false"><span>' + c.name + "</span><small>" + (c.arabic ? '<span class="ar">' + c.arabic + "</span>" : "") + countOf(c.id) + "</small></button></li>";
+  }).join("");
+
+  function pick(id, scroll) {
+    current = id; render();
+    if (scroll) document.getElementById("collection").scrollIntoView({ behavior: calmMotion() ? "auto" : "smooth" });
+  }
+  function calmMotion() { return matchMedia("(prefers-reduced-motion:reduce)").matches; }
+  chipsEl.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) pick(b.dataset.cat, false); });
+
+  var drawer = document.getElementById("drawer"), scrim = document.getElementById("scrim"), burger = document.getElementById("burger");
+  function menu(open) {
+    drawer.classList.toggle("open", open); scrim.classList.toggle("show", open);
+    drawer.setAttribute("aria-hidden", String(!open)); burger.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("lock", open);
+    if (open) document.getElementById("closeMenu").focus(); else if (document.activeElement && drawer.contains(document.activeElement)) burger.focus();
+  }
+  burger.addEventListener("click", function () { menu(!drawer.classList.contains("open")); });
+  scrim.addEventListener("click", function () { menu(false); });
+  document.getElementById("closeMenu").addEventListener("click", function () { menu(false); });
+  addEventListener("keydown", function (e) { if (e.key === "Escape") menu(false); });
+  menuEl.addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; menu(false); pick(b.dataset.cat, true); });
+  drawer.querySelectorAll(".dm a").forEach(function (a) { a.addEventListener("click", function () { menu(false); }); });
+  render();
 
   grid.addEventListener("click", function (e) {
     var c = e.target.closest(".card"); if (!c) return;

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>House of Al Mahrah | Abayas, kaftans and modest activewear</title>
 <meta name="description" content="House of Al Mahrah makes abayas, kaftans, lace tunics and modest activewear. Order on WhatsApp.">
-<link rel="icon" href="images/noor-cape-abaya.jpg">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -13,10 +14,19 @@
 </head>
 <body>
 <header id="hd"><div class="wrap nav">
-<ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
-<a href="#top" class="logo"><b>HOUSE OF AL MAHRAH</b><span class="ar">بيت المهرة</span></a>
+<div class="navl"><button type="button" class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+<ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<a href="#top" class="logo" aria-label="House of Almahra"><img src="images/logo.jpg" alt="House of Almahra" width="60" height="60"></a>
 <a class="bag" data-wa target="_blank" rel="noopener">WhatsApp</a>
 </div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
+<div class="dh"><span class="ar">بيت المهرة</span><button type="button" class="x" id="closeMenu" aria-label="Close menu">&times;</button></div>
+<p class="dl">Shop by category</p>
+<ul id="catMenu"></ul>
+<p class="dl">House</p>
+<ul class="dm"><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+</aside>
 
 <main id="top">
 <div class="hero"><div class="wrap">
@@ -40,7 +50,9 @@
 
 <section class="shop" id="collection"><div class="wrap">
 <div class="head rv"><h2>Collection</h2><p>Pick a colour and size, then send your order on WhatsApp.</p></div>
+<div class="chips" id="chips"></div>
 <div class="grid" id="grid"></div>
+<p class="empty" id="empty" hidden>No pieces in this category yet.</p>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap rv">
@@ -52,7 +64,7 @@
 </main>
 
 <footer><div class="wrap">
-<div class="ar">بيت المهرة</div><b>HOUSE OF AL MAHRAH</b>
+<img class="flogo" src="images/logo.jpg" alt="House of Almahra" width="96" height="96"><div class="ar">بيت المهرة</div>
 <ul><li><a href="#collection">Collection</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
 <small>© 2026 House of Al Mahrah</small>
 </div></footer>
